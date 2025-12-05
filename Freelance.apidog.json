@@ -1,0 +1,570 @@
+{
+  "apidogProject": "1.0.0",
+  "$schema": {
+    "app": "apidog",
+    "type": "project",
+    "version": "1.2.0"
+  },
+  "info": {
+    "name": "Freelance",
+    "description": "",
+    "mockRule": {
+      "rules": [],
+      "enableSystemRule": true
+    }
+  },
+  "apiCollection": [
+    {
+      "name": "Root",
+      "id": 3136153,
+      "auth": {},
+      "securityScheme": {},
+      "parentId": 0,
+      "serverId": "",
+      "description": "",
+      "identityPattern": {
+        "httpApi": {
+          "type": "methodAndPath",
+          "bodyType": "",
+          "fields": []
+        }
+      },
+      "shareSettings": {},
+      "visibility": "SHARED",
+      "moduleId": 481078,
+      "preProcessors": [
+        {
+          "executionTiming": "prerequest",
+          "defaultEnable": true,
+          "enable": true,
+          "data": "",
+          "type": "customScript",
+          "id": "xXTfg3dGFEV_5WudSkTiq"
+        },
+        {
+          "id": "inheritProcessors",
+          "type": "inheritProcessors",
+          "data": {}
+        }
+      ],
+      "postProcessors": [
+        {
+          "executionTiming": "prerequest",
+          "defaultEnable": true,
+          "enable": true,
+          "data": "",
+          "type": "customScript",
+          "id": "7H2KaP5FbRDrk9XGN-5T-"
+        },
+        {
+          "id": "inheritProcessors",
+          "type": "inheritProcessors",
+          "data": {}
+        }
+      ],
+      "inheritPostProcessors": {},
+      "inheritPreProcessors": {},
+      "items": [
+        {
+          "name": "Tech Eval",
+          "id": 5823823,
+          "auth": {},
+          "securityScheme": {},
+          "parentId": 0,
+          "serverId": "",
+          "description": "",
+          "identityPattern": {
+            "httpApi": {
+              "type": "inherit",
+              "bodyType": "",
+              "fields": []
+            }
+          },
+          "shareSettings": {},
+          "visibility": "INHERITED",
+          "moduleId": 481078,
+          "preProcessors": [
+            {
+              "id": "inheritProcessors",
+              "type": "inheritProcessors",
+              "data": {}
+            }
+          ],
+          "postProcessors": [
+            {
+              "id": "inheritProcessors",
+              "type": "inheritProcessors",
+              "data": {}
+            }
+          ],
+          "inheritPostProcessors": {},
+          "inheritPreProcessors": {},
+          "items": [
+            {
+              "name": "login",
+              "api": {
+                "id": "25209863",
+                "method": "post",
+                "path": "/api/v1/auth/login",
+                "parameters": {},
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "134504325",
+                    "code": 200,
+                    "name": "Success",
+                    "headers": [],
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "description": "",
+                    "contentType": "json",
+                    "mediaType": ""
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "mediaType": "",
+                  "examples": [
+                    {
+                      "value": "{\n   \"username\": \"test-user2\",\n    \"password\": \"123456aA@\"\n}",
+                      "mediaType": "application/json",
+                      "description": ""
+                    }
+                  ],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "developing",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 10,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 481078,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [
+                  {
+                    "type": "customScript",
+                    "data": "const response = pm.response.json();\nif (response && response.data) {\n    pm.environment.set(\"accessToken\", response.data.accessToken);\n    pm.environment.set(\"refreshToken\", response.data.refreshToken);\n}",
+                    "defaultEnable": false,
+                    "enable": true,
+                    "id": "B2BkuRfmEu27v9lbs3QHT"
+                  }
+                ],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "Register",
+              "api": {
+                "id": "25209864",
+                "method": "post",
+                "path": "/api/v1/auth/register",
+                "parameters": {},
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "137667326",
+                    "code": 200,
+                    "name": "Success",
+                    "headers": [],
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "description": "",
+                    "contentType": "json",
+                    "mediaType": ""
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "mediaType": "",
+                  "examples": [
+                    {
+                      "value": "{\n    \"username\": \"test-user2\",\n    \"password\": \"123456aA@\"\n}",
+                      "mediaType": "application/json",
+                      "description": ""
+                    }
+                  ],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "developing",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 20,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 481078,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "refresh Token",
+              "api": {
+                "id": "25209899",
+                "method": "post",
+                "path": "/api/v1/auth/refresh",
+                "parameters": {},
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "responses": [
+                  {
+                    "id": "158734245",
+                    "code": 200,
+                    "name": "OK",
+                    "jsonSchema": {
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "type": "integer"
+                        },
+                        "status": {
+                          "type": "string"
+                        },
+                        "message": {
+                          "type": "string"
+                        },
+                        "data": {
+                          "type": "object",
+                          "properties": {
+                            "accessToken": {
+                              "type": "string"
+                            },
+                            "refreshToken": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "accessToken",
+                            "refreshToken"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "code",
+                        "status",
+                        "message",
+                        "data"
+                      ]
+                    },
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "mediaType": "",
+                  "examples": [
+                    {
+                      "value": "{\n    \"token\": \"{{refreshToken}}\"\n}",
+                      "mediaType": "application/json",
+                      "description": ""
+                    }
+                  ],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "developing",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 30,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 481078,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "socketCollection": [],
+  "docCollection": [],
+  "webSocketCollection": [
+    {
+      "name": "Root",
+      "parentId": 0,
+      "description": "",
+      "moduleId": 481078,
+      "items": [
+        {
+          "name": "Tech Eval",
+          "parentId": 0,
+          "description": "",
+          "moduleId": 481078,
+          "items": [
+            {
+              "name": "websocket",
+              "api": {
+                "id": "3489111",
+                "path": "ws://localhost:2025/ws/notifications",
+                "parameters": {
+                  "query": [
+                    {
+                      "id": "iBb6YDR3k6",
+                      "name": "accessToken",
+                      "example": "{{accessToken}}",
+                      "required": false,
+                      "description": "",
+                      "enable": true,
+                      "type": "string"
+                    }
+                  ]
+                },
+                "commonParameters": {
+                  "query": [],
+                  "body": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [],
+                  "message": "{\n  \"type\": \"SEND_NOTIFICATION\",\n  \"payload\": {\n    \"recipientId\": \"ID_CUA_RECIPIENT\",\n    \"content\": \"Hello from sender01 via Kafka!\"\n  }\n}",
+                  "messageType": "json"
+                },
+                "description": "",
+                "tags": [],
+                "status": "developing",
+                "ordering": 10,
+                "advancedSettings": {
+                  "isDefaultUrlEncoding": 1
+                },
+                "moduleId": 481078
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "socketIOCollection": [],
+  "responseCollection": [],
+  "schemaCollection": [],
+  "securitySchemeCollection": [],
+  "requestCollection": [
+    {
+      "name": "Root",
+      "children": [],
+      "ordering": [
+        "requestFolder.860739"
+      ],
+      "items": []
+    }
+  ],
+  "environments": [
+    {
+      "name": "Mini Project Eval",
+      "websocketBaseUrls": {},
+      "requestProxyAgentSettings": {},
+      "variables": [
+        {
+          "name": "accessToken",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "refreshToken",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        }
+      ],
+      "parameters": {
+        "cookie": [],
+        "query": [],
+        "header": [],
+        "body": []
+      },
+      "type": "normal",
+      "visibility": "protected",
+      "ordering": 30,
+      "tags": [
+        {
+          "name": "",
+          "color": "#9373EE"
+        }
+      ],
+      "id": "5280767",
+      "baseUrl": "http://localhost:2025",
+      "baseUrls": {
+        "default": "http://localhost:2025"
+      }
+    }
+  ],
+  "commonScripts": [],
+  "globalVariables": [
+    {
+      "id": "828993",
+      "variables": [
+        {
+          "name": "backend_url",
+          "value": "http://localhost:8080",
+          "description": "",
+          "isBindInitial": true,
+          "initialValue": "http://localhost:8080",
+          "isSync": true
+        },
+        {
+          "name": "acess_token",
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiX2lkIjoiNjZjYjM4ODIyOWEzYjdhYTdiZThlN2YxIiwibmFtZSI6IkknbSBhZG1pbiIsInJvbGUiOiJVU0VSUyIsInBob25lIjoiIiwiYWRkcmVzcyI6W10sImF2YXRhciI6ImRlZmF1bHQtdXNlci5wbmcifSwic3ViIjoiNjZjYjM4ODIyOWEzYjdhYTdiZThlN2YxIiwiaWF0IjoxNzI2NjUyMjIwLCJleHAiOjE4MTMwNTIyMjB9.HsgZjszkSkRIbIS_vkqLiQVvT5n9pZzpCp2GIbq7MMY",
+          "description": "",
+          "isBindInitial": true,
+          "initialValue": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiX2lkIjoiNjZjYjM4ODIyOWEzYjdhYTdiZThlN2YxIiwibmFtZSI6IkknbSBhZG1pbiIsInJvbGUiOiJVU0VSUyIsInBob25lIjoiIiwiYWRkcmVzcyI6W10sImF2YXRhciI6ImRlZmF1bHQtdXNlci5wbmcifSwic3ViIjoiNjZjYjM4ODIyOWEzYjdhYTdiZThlN2YxIiwiaWF0IjoxNzI2NjUyMjIwLCJleHAiOjE4MTMwNTIyMjB9.HsgZjszkSkRIbIS_vkqLiQVvT5n9pZzpCp2GIbq7MMY",
+          "isSync": true
+        }
+      ]
+    }
+  ],
+  "commonParameters": null,
+  "projectSetting": {
+    "id": "829056",
+    "auth": {},
+    "securityScheme": {},
+    "gateway": [],
+    "language": "en-US",
+    "apiStatuses": [
+      "developing",
+      "testing",
+      "released",
+      "deprecated"
+    ],
+    "mockSettings": {},
+    "preProcessors": [
+      {
+        "executionTiming": "prerequest",
+        "defaultEnable": true,
+        "enable": true,
+        "data": "",
+        "type": "customScript",
+        "id": "xXTfg3dGFEV_5WudSkTiq"
+      }
+    ],
+    "postProcessors": [
+      {
+        "executionTiming": "prerequest",
+        "defaultEnable": true,
+        "enable": true,
+        "data": "",
+        "type": "customScript",
+        "id": "7H2KaP5FbRDrk9XGN-5T-"
+      }
+    ],
+    "advancedSettings": {
+      "enableJsonc": true,
+      "enableBigint": false,
+      "responseValidate": true,
+      "enableTestScenarioSetting": false,
+      "enableYAPICompatScript": false,
+      "isDefaultUrlEncoding": 3,
+      "publishedDocUrlRules": {
+        "defaultRule": "SLUGIFY_WITH_RESOURCE_KEY",
+        "resourceKeyStandard": "NEW"
+      }
+    },
+    "initialDisabledMockIds": [],
+    "servers": [
+      {
+        "id": "default",
+        "name": "Default Server"
+      }
+    ],
+    "cloudMock": {
+      "security": "free",
+      "enable": false,
+      "tokenKey": "apidogToken"
+    }
+  },
+  "customFunctions": [],
+  "projectAssociations": []
+}

@@ -1,0 +1,41 @@
+server:
+  port: 2025
+
+# Spring Boot Configurations
+spring:
+  data:
+    # Redis Configuration
+    redis:
+      host: localhost
+      port: 6379
+  # Kafka Configuration
+  kafka:
+    bootstrap-servers: localhost:29092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      # Sử dụng JsonSerializer để tự động chuyển đổi object thành JSON
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      group-id: notification-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      # Sử dụng JsonDeserializer để tự động chuyển JSON thành object
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        # Cấu hình quan trọng: cho phép Deserializer tin tưởng package chứa model
+        spring.json.trusted.packages: "com.kaidev99.training.miniproject..domain.model"
+
+    # MongoDB Configuration
+  mongodb:
+    uri: mongodb://localhost:27017/techevaldb
+
+app:
+  kafka:
+    notification-topic: "notification_events"
+
+# JWT Settings
+jwt:
+  secret: 9378dec435736ece984bfb16a046b2dd8a032b1ab0442d2d07bad4ba0ca6415c
+  expiration: 86400000 # 24 hours
+  refresh-token:
+    expiration: 604800000 # 7 days
